@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <clipPath id="clip"><rect x="16" y="16" width="480" height="480" rx="112"/></clipPath>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#bg)"/>
+  <g clip-path="url(#clip)">
+    <!-- body / neck -->
+    <path d="M70 520 C70 400 130 330 215 320 L330 320 C300 400 300 470 320 520 Z" fill="#ffffff"/>
+    <!-- collar + tag -->
+    <path d="M118 392 C170 420 250 424 312 398 L318 436 C250 464 160 458 108 430 Z" fill="#0a0a0a"/>
+    <circle cx="214" cy="452" r="17" fill="#22c55e" stroke="#0a0a0a" stroke-width="5"/>
+    <!-- head -->
+    <circle cx="222" cy="232" r="122" fill="#ffffff"/>
+    <rect x="290" y="226" width="130" height="92" rx="46" fill="#ffffff"/>
+    <!-- ear -->
+    <path d="M152 128 C98 150 78 250 108 332 C146 350 186 306 192 232 C195 184 182 140 152 128 Z" fill="#0a0a0a"/>
+    <!-- eye -->
+    <circle cx="282" cy="212" r="17" fill="#0a0a0a"/>
+    <circle cx="288" cy="206" r="5.5" fill="#ffffff"/>
+    <!-- nose -->
+    <ellipse cx="410" cy="250" rx="22" ry="16" fill="#0a0a0a"/>
+    <!-- ball in the mouth -->
+    <circle cx="352" cy="330" r="56" fill="#d9f99d"/>
+    <path d="M312 292 C336 316 336 346 312 372" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M392 288 C368 314 368 346 392 372" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="352" cy="330" r="56" fill="none" stroke="#0a0a0a" stroke-opacity=".18" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+[package]
+name = "fetchy"
+version = "0.1.0"
+edition = "2024"
+description = "Fetchy: open-source multi-connection download manager"
+
+[lib]
+name = "a_idm_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+fetchy-core = { path = "../../crates/fetchy-core" }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+tauri = { version = "2.12.3", features = ["macos-private-api", "tray-icon"] }
+tauri-plugin-autostart = "2.7.0"
+tauri-plugin-clipboard-manager = "2.4.2"
+tauri-plugin-dialog = "2.8.2"
+tauri-plugin-notification = "2.6.0"
+tauri-plugin-opener = "2.7.1"
+tauri-plugin-process = "2.4.0"
+tauri-plugin-updater = "2.13.3"
+tokio = "1.53.2"

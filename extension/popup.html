@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1><img class="logo" src="icons/icon48.png" alt="" /> Fetchy</h1>
+    <div id="status" class="status">Checking…</div>
+
+    <div id="streams" hidden>
+      <div class="sh">Streams on this page</div>
+      <div id="streamList"></div>
+    </div>
+
+    <div id="all">
+      <div class="sh">Download all links on this page</div>
+      <div class="two">
+        <select id="kind">
+          <option value="all">All files</option>
+          <option value="video">Videos</option>
+          <option value="audio">Audio</option>
+          <option value="image">Images</option>
+          <option value="doc">Documents</option>
+          <option value="archive">Archives</option>
+          <option value="program">Programs</option>
+        </select>
+        <button id="scan">Scan page</button>
+      </div>
+      <div id="found" hidden>
+        <div class="sh"><span id="count"></span> <a href="#" id="sall">all</a> · <a href="#" id="snone">none</a></div>
+        <div id="foundList"></div>
+        <button id="sendAll">Download selected</button>
+      </div>
+    </div>
+
+    <label class="row">
+      <input type="checkbox" id="capture" />
+      Capture browser downloads
+    </label>
+
+    <label>Pairing token <small>(Fetchy → Settings → Browser integration)</small>
+      <input id="token" type="password" spellcheck="false" autocomplete="off" />
+    </label>
+
+    <div class="two">
+      <label>Port <input id="port" type="number" min="1" max="65525" /></label>
+      <label>Skip files under (KB) <input id="minSizeKb" type="number" min="0" /></label>
+    </div>
+
+    <label>Never capture extensions <small>(comma separated)</small>
+      <input id="ignoreExt" placeholder="e.g. torrent, crx" spellcheck="false" />
+    </label>
+
+    <button id="save">Save &amp; test</button>
+    <script src="popup.js"></script>
+  </body>
+</html>

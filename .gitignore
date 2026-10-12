@@ -1,0 +1,14 @@
+node_modules
+dist
+target
+*.part
+
+dist-extension
+
+*.key
+*.key.pub
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db

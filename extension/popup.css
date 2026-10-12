@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+body { width: 320px; margin: 0; padding: 16px; background: #16161c; color: #ececf3; font: 13px/1.4 system-ui, sans-serif; display: grid; gap: 12px; }
+h1 { margin: 0; font-size: 16px; display: flex; align-items: center; gap: 10px; }
+.logo { width: 24px; height: 24px; border-radius: 7px; }
+.status { padding: 9px 11px; border-radius: 10px; background: #23232d; color: #b4b4c4; }
+.status.ok { background: rgba(45, 212, 191, 0.14); color: #5eead4; }
+.status.warn { background: rgba(224, 160, 48, 0.14); color: #f3c066; }
+.status.bad { background: rgba(242, 85, 107, 0.14); color: #ff8a9b; }
+label { display: grid; gap: 5px; color: #c4c4d1; }
+label.row { display: flex; align-items: center; gap: 8px; }
+small { color: #8b8b9b; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+input:not([type="checkbox"]) { height: 34px; padding: 0 10px; border-radius: 9px; border: 1px solid rgba(255, 255, 255, 0.1); background: #1e1e27; color: inherit; width: 100%; }
+input:focus { outline: 1px solid #8b5cf6; }
+button { height: 36px; border: 0; border-radius: 10px; color: #fff; font-weight: 500; cursor: pointer; background: linear-gradient(90deg, #14b8a6, #a855f7); }
+button:hover { filter: brightness(1.1); }
+.sh { color: #8b8b9b; font-size: 12px; margin-bottom: 6px; }
+.stream { display: flex; align-items: center; gap: 8px; padding: 6px 0; }
+.stream span { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stream button { height: 28px; padding: 0 12px; font-size: 12px; }
+[hidden] { display: none !important; }
+select { height: 36px; border-radius: 9px; border: 1px solid rgba(255,255,255,.1); background: #1e1e27; color: inherit; padding: 0 8px; }
+#foundList { max-height: 180px; overflow: auto; margin: 6px 0; display: grid; gap: 2px; }
+#foundList label { display: flex; align-items: center; gap: 6px; }
+#foundList span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#sendAll { width: 100%; }
+a { color: #a78bfa; }
