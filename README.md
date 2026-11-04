@@ -70,7 +70,7 @@ Layout: `crates/fetchy-core` (engine, CLI, end-to-end tests), `app/` (Tauri 2 + 
 Building from source needs [Rust](https://rustup.rs) and Node.js 22:
 - **Windows**: the WebView2 runtime (preinstalled on Windows 11) and the MSVC build tools.
 - **macOS**: Xcode Command Line Tools (`xcode-select --install`).
-- **Linux**: `sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libssl-dev libgtk-3-dev libayatana-appindicator3-dev` (Debian/Ubuntu). Other distros: <https://tauri.app/start/prerequisites>.
+- **Linux**: `sudo apt-get install -y libwebkit2gtk-4.1-dev librsvg2-dev patchelf libssl-dev libgtk-3-dev libayatana-appindicator3-dev` (Debian/Ubuntu). Other distros: <https://tauri.app/start/prerequisites>.
 
 Then `cd app && npm i && npm run tauri dev`.
 

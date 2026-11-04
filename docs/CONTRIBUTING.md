@@ -13,7 +13,7 @@ You need [Rust](https://rustup.rs) (stable), [Node.js](https://nodejs.org) 22+, 
 [Tauri prerequisites](https://tauri.app/start/prerequisites) for your OS:
 
 - **macOS:** Xcode Command Line Tools (`xcode-select --install`).
-- **Linux:** the packages CI installs: `sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libssl-dev libgtk-3-dev libayatana-appindicator3-dev`.
+- **Linux:** the packages CI installs: `sudo apt-get install -y libwebkit2gtk-4.1-dev librsvg2-dev patchelf libssl-dev libgtk-3-dev libayatana-appindicator3-dev`.
 - **Windows:** the WebView2 runtime (already in Windows 11).
 
 On any OS, run the app with `cd app && npm i && npm run tauri dev`.
