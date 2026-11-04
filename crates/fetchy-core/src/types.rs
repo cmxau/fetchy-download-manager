@@ -210,10 +210,6 @@ impl Queue {
             force_power: false,
         }
     }
-
-    pub fn is_builtin(&self) -> bool {
-        matches!(self.id.as_str(), MAIN_QUEUE | SYNC_QUEUE | LIMITS_QUEUE)
-    }
 }
 
 /// The three queues every install has; adds any that are missing, in this order at the front.

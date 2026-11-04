@@ -39,6 +39,7 @@ Key ideas:
 - `src`: React 19 + TypeScript + Vite. `App.tsx` holds state; `components/` has Overview, Sidebar, DownloadTable, SettingsPage,
   GrabberWizard, BatchDialog, dialogs and the title bar. `api.ts` wraps the Tauri commands; `mockApi.ts` lets `npm run dev`
   run the interface in a plain browser with fake data. `styles.css` is the single stylesheet for both the dark and light themes.
+- **Platform look:** `main.tsx` adds a `mac` class to `<html>` when the user agent contains "Mac"; `styles.css` uses it for macOS-style window corners (16px radius) and left-side traffic-light buttons (close, minimize, full screen). Windows and Linux keep the default right-side controls. The title bar's green button toggles full screen on macOS (and on any platform with Alt-click); the Tauri capability file allows `set-fullscreen` and `is-fullscreen` for this.
 
 ## `extension/`
 

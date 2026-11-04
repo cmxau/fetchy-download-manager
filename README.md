@@ -34,7 +34,10 @@ Free, open-source download manager for Windows, macOS and Linux. Fetchy splits e
 
 ## Install
 
-Download the installer for your system from the [latest release](https://github.com/cmxau/fetchy-download-manager/releases/latest).
+Download the installer for your system from the [latest release](https://github.com/cmxau/fetchy-download-manager/releases/latest). Releases are built for Windows, macOS (Apple silicon and Intel) and Linux (Ubuntu 22.04 build).
+
+On macOS the window uses native-style rounded corners, with the close / minimize / full screen buttons on the left, and the app icon follows the macOS icon grid. Windows and Linux keep the right-hand window controls.
+
 Updates are offered inside the app (Settings → Updates & About), where you can pick how often Fetchy checks and whether it installs them by itself.
 
 Merging a video's separate audio track needs [ffmpeg](https://ffmpeg.org/download.html); Fetchy finds it on your PATH or next to the app, or you can pick it in Settings.
@@ -63,7 +66,13 @@ npm run tauri build      # installers for the current OS
 ```
 
 Layout: `crates/fetchy-core` (engine, CLI, end-to-end tests), `app/` (Tauri 2 + React), `extension/` (Manifest V3), `scripts/`, `docs/`.
-Linux needs the usual Tauri dependencies (`webkit2gtk-4.1` etc.): <https://tauri.app/start/prerequisites>.
+
+Building from source needs [Rust](https://rustup.rs) and Node.js 22:
+- **Windows**: the WebView2 runtime (preinstalled on Windows 11) and the MSVC build tools.
+- **macOS**: Xcode Command Line Tools (`xcode-select --install`).
+- **Linux**: `sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libssl-dev libgtk-3-dev libayatana-appindicator3-dev` (Debian/Ubuntu). Other distros: <https://tauri.app/start/prerequisites>.
+
+Then `cd app && npm i && npm run tauri dev`.
 
 Documentation: [installation](docs/INSTALLATION.md), [user guide](docs/USER-GUIDE.md), [troubleshooting](docs/TROUBLESHOOTING.md), [architecture](docs/ARCHITECTURE.md), [contributing](docs/CONTRIBUTING.md), [security](docs/SECURITY.md).
 Releasing and publishing the extension: [docs/RELEASING.md](docs/RELEASING.md), [extension/STORE.md](extension/STORE.md).

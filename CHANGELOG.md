@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- macOS and Linux support alongside Windows; CI tests all three and releases ship for each.
+- macOS window chrome: native-style rounded corners and close / minimize / full screen buttons on the left.
+- App icon follows the macOS icon grid.
+- Security hardening: the API token file is created owner-only (0600) on Unix, the Host header check is stricter, and CI runs with a least-privilege token.
+
 ## 0.1.0
 
 First release.

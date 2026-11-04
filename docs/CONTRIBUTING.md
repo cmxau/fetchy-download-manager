@@ -9,9 +9,14 @@ Thanks for helping. Bug reports, fixes, features and docs are all welcome.
 
 ## Set up
 
-You need [Rust](https://rustup.rs) (stable), [Node.js](https://nodejs.org) 22+, and on Linux the
-[Tauri prerequisites](https://tauri.app/start/prerequisites) (`webkit2gtk-4.1` etc.). On Windows you also need the
-WebView2 runtime (already in Windows 11).
+You need [Rust](https://rustup.rs) (stable), [Node.js](https://nodejs.org) 22+, and the
+[Tauri prerequisites](https://tauri.app/start/prerequisites) for your OS:
+
+- **macOS:** Xcode Command Line Tools (`xcode-select --install`).
+- **Linux:** the packages CI installs: `sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libssl-dev libgtk-3-dev libayatana-appindicator3-dev`.
+- **Windows:** the WebView2 runtime (already in Windows 11).
+
+On any OS, run the app with `cd app && npm i && npm run tauri dev`.
 
 ```
 git clone https://github.com/cmxau/fetchy-download-manager

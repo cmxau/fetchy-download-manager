@@ -10,9 +10,15 @@ Please do not open a public issue. Use GitHub's private reporting: the repositor
 - A local HTTP API for the browser extension, bound to `127.0.0.1` only (port 6800 or the next free one).
 - Every state-changing call needs the secret pairing token, and requests from web-page origins are rejected,
   so a website cannot drive Fetchy.
+- The `Host` header must be a loopback name (`127.0.0.1`, `localhost`, `[::1]`) with an optional numeric port; anything else is rejected, which blocks DNS-rebinding.
+- The token is stored in the `api_token` file in the app data folder. On macOS and Linux the file is created owner-only (mode `0600`).
 - Updates are verified against the public key built into the app; unsigned or mismatched updates are refused.
 - Site logins, cookies and proxy passwords you enter are stored in Fetchy's settings file on your computer. They are sent only to the site or proxy they are for.
 - Fetchy has no analytics or telemetry. Its only own network request is the update check against GitHub releases.
+
+## CI
+
+The CI workflow (`.github/workflows/ci.yml`) runs with a least-privilege token (`permissions: contents: read`). Only the release workflow has `contents: write`.
 
 ## Keys
 

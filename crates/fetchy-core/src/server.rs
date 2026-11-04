@@ -26,7 +26,22 @@ pub fn load_or_create_token(dir: &Path) -> String {
         uuid::Uuid::new_v4().simple(),
         uuid::Uuid::new_v4().simple()
     );
-    let _ = std::fs::write(&p, &t);
+    // Owner-only on unix: the token is the only thing guarding the local API.
+    #[cfg(unix)]
+    let f = {
+        use std::os::unix::fs::OpenOptionsExt;
+        std::fs::OpenOptions::new()
+            .write(true)
+            .create(true)
+            .truncate(true)
+            .mode(0o600)
+            .open(&p)
+    };
+    #[cfg(not(unix))]
+    let f = std::fs::File::create(&p);
+    if let Ok(mut f) = f {
+        let _ = std::io::Write::write_all(&mut f, t.as_bytes());
+    }
     t
 }
 
@@ -145,7 +160,10 @@ fn extension_origin(o: &str) -> bool {
 }
 
 fn loopback_host(h: &str) -> bool {
-    let host = h.rsplit_once(':').map(|(a, _)| a).unwrap_or(h);
+    let host = match h.rsplit_once(':') {
+        Some((a, port)) if port.bytes().all(|b| b.is_ascii_digit()) => a,
+        _ => h,
+    };
     matches!(host, "127.0.0.1" | "localhost" | "[::1]")
 }
 

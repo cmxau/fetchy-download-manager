@@ -11,10 +11,12 @@
 1. Download the `.dmg` that matches your Mac: `aarch64` for Apple silicon, `x64` for Intel.
 2. Drag Fetchy to Applications. The app is not notarized yet, so the first time, right-click it and choose **Open**.
 
+On macOS the window uses native-style rounded corners and the close, minimize and full screen buttons sit on the left; the green button toggles full screen.
+
 ## Linux
 
 Download one of: `.AppImage` (any distribution; `chmod +x` it and run), `.deb` (Debian, Ubuntu) or `.rpm` (Fedora, openSUSE).
-The `.deb` and `.rpm` pull in WebKitGTK (`webkit2gtk-4.1`) automatically.
+The `.deb` and `.rpm` pull in WebKitGTK (`webkit2gtk-4.1`) automatically. Window controls stay on the right, as on Windows.
 
 ## Updating
 

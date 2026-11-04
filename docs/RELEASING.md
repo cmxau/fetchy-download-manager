@@ -19,7 +19,7 @@ Everything is automated by `.github/workflows/release.yml`. A release gives you:
    **If you lose the private key, installed copies can no longer be updated**, so keep a backup somewhere safe.
    To make a new pair: `cd app && npx tauri signer generate -w fetchy-updater.key`, then put the new public key in
    `tauri.conf.json` (users on old builds would have to reinstall once).
-3. Settings → Actions → General → Workflow permissions: **Read and write**.
+3. Settings → Actions → General → Workflow permissions: **Read and write**. (The release workflow declares `contents: write` itself; the CI workflow is limited to `contents: read`.)
 
 ## Every release
 

@@ -11,11 +11,17 @@ interface Props {
   settingsOpen: boolean;
 }
 
-async function win(op: "minimize" | "toggleMaximize" | "close") {
+async function win(op: "minimize" | "toggleMaximize" | "fullscreen" | "close") {
   if (!isTauri) return;
   if (op === "toggleMaximize") {
     const { getCurrentWindow } = await import("@tauri-apps/api/window");
     void getCurrentWindow().toggleMaximize();
+    return;
+  }
+  if (op === "fullscreen") {
+    const { getCurrentWindow } = await import("@tauri-apps/api/window");
+    const w = getCurrentWindow();
+    void w.setFullscreen(!(await w.isFullscreen()));
     return;
   }
   // Minimize / close go through the app so the tray settings apply.
@@ -72,7 +78,7 @@ export function TitleBar({ query, onQuery, searchRef, dark, onToggleTheme, onSet
         <button className="wc" aria-label="Minimize" onClick={() => win("minimize")}>
           <svg width="10" height="10" viewBox="0 0 10 10"><path d="M0 5.5h10" stroke="currentColor" strokeWidth="1" /></svg>
         </button>
-        <button className="wc" aria-label="Maximize" onClick={() => win("toggleMaximize")}>
+        <button className="wc" aria-label="Maximize" onClick={(e) => win(e.altKey || document.documentElement.classList.contains("mac") ? "fullscreen" : "toggleMaximize")}>
           <svg width="10" height="10" viewBox="0 0 10 10"><rect x="0.5" y="0.5" width="9" height="9" fill="none" stroke="currentColor" strokeWidth="1" /></svg>
         </button>
         <button className="wc close" aria-label="Close" onClick={() => win("close")}>

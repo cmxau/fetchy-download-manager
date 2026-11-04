@@ -26,6 +26,9 @@ The stream may be DRM-protected (not supported), a live DASH stream (not support
 **Windows SmartScreen or macOS blocks the installer.**
 Installers are not code-signed yet. See [INSTALLATION.md](INSTALLATION.md) for the one-time bypass.
 
+**On macOS the window buttons are on the left and the green one goes full screen.**
+That is intended. Click it again to leave full screen.
+
 **The app disappeared when I closed it.**
 Minimize/close-to-tray is on. Click the tray icon to restore, or use its menu to quit. Change this in Settings → General.
 

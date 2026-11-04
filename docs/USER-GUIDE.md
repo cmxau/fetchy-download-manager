@@ -53,6 +53,7 @@ Projects can make an offline copy with rewritten links and re-run on a timer.
 - **Network:** HTTP or SOCKS5 proxy; per-site logins and cookies.
 - **When finished:** desktop notification, sound, a Windows Defender scan, and a command to run after every download.
 - **Auto retry** count.
+- **Window controls:** on macOS they are traffic lights on the left (close, minimize, full screen); on Windows and Linux they are on the right.
 - **System:** start with Windows (starts hidden in the tray), minimize or close to the tray.
 - **When all downloads finish:** do nothing, exit, sleep, hibernate or shut down (applies once).
 - **Browser extension:** pairing token and port.

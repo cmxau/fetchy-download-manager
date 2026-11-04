@@ -39,7 +39,7 @@ small, em { font-style: normal; }
   flex-direction: column;
   background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--win-radius, 18px);
   overflow: hidden;
   position: relative;
 }
@@ -114,7 +114,7 @@ small, em { font-style: normal; }
   display: grid; align-items: center; column-gap: 12px;
   grid-template-columns: 22px minmax(200px, 1fr) 96px 150px 104px 140px;
 }
-.row.head { height: 48px; color: #9d9d9d; font-size: 14px; padding: 0 10px; }
+.row.head { border: 1px solid transparent; height: 48px; color: #9d9d9d; font-size: 14px; padding: 0 10px; }
 .th { display: inline-flex; align-items: center; gap: 6px; color: inherit; justify-self: start; }
 .th:hover, .th.on { color: #fff; }
 .rows { flex: 1; overflow-y: auto; padding-right: 6px; }
@@ -262,6 +262,7 @@ html.clip-window, html.clip-window body { background: transparent; }
 [data-theme="light"] .btn:hover { background: #e4e4ee; }
 [data-theme="light"] .btn.primary { color: #fff; }
 [data-theme="light"] .check { border-color: #8a8a8a; }
+[data-theme="light"] .check.on { border-color: var(--accent); }
 [data-theme="light"] .clip { background: #fff; color: var(--text); }
 [data-theme="light"] .wc { color: var(--text); }
 [data-theme="light"] .wc.close:hover { color: #fff; background: #e81123; }
@@ -499,3 +500,16 @@ textarea { font: inherit; color: inherit; background: var(--card-2); border: 1px
 }
 [data-theme="light"] .btn.primary:hover { filter: brightness(1.08); }
 [data-theme="light"] .btn.primary:disabled { opacity: 0.55; }
+
+/* macOS: native window corners, traffic lights on the left (close, minimize, full screen). */
+html.mac { --win-radius: 16px; }
+.mac .titlebar { padding-left: 0; gap: 14px; }
+.mac .titlebar .win-ctl { order: -1; align-items: center; gap: 8px; margin: 0 6px 0 20px; }
+.mac .wc { width: 12px; height: 12px; padding: 0; flex: none; border-radius: 50%; color: transparent; position: relative; }
+.mac .wc svg { width: 8px; height: 8px; }
+.mac .wc.close { order: 1; background: #ff5f57; }
+.mac .wc[aria-label="Minimize"] { order: 2; background: #febc2e; }
+.mac .wc[aria-label="Maximize"] { order: 3; background: #28c840; }
+.mac .win-ctl:hover .wc { color: rgba(0, 0, 0, 0.6); }
+.mac .wc:hover, .mac .wc.close:hover { color: rgba(0, 0, 0, 0.6); filter: brightness(0.92); }
+.mac .wc.close:hover { background: #ff5f57; }
