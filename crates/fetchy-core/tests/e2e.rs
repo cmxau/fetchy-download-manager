@@ -950,7 +950,8 @@ async fn grabber_project_queues_new_files_once() {
 
 #[tokio::test]
 async fn start_now_overrides_a_closed_schedule_and_stop_halts_it() {
-    let port = serve(2 * 1024 * 1024, true).await;
+    // Slow enough that a fast runner can't finish the file before the status checks.
+    let port = serve(64 * 1024, true).await;
     let m = Manager::new(tmp("data-startnow")).unwrap();
     let mut st = m.settings();
     st.queues.push(fetchy_core::Queue {
