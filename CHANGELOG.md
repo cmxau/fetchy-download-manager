@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.0
 
 - macOS and Linux support alongside Windows; CI tests all three and releases ship for each.
 - macOS window chrome: native-style rounded corners and close / minimize / full screen buttons on the left.
